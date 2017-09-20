@@ -6,22 +6,22 @@ import org.hibernate.Session;
 
 import com.test.hibernate.tutorial.util.HibernateUtil;
 
-public class One2OneAnnotationDemo {
+public class One2OneDemo {
 	public static void main(String[] args) {
-		System.out.println("Hibernate one to one (Annotation)");
-		Session session = HibernateUtil.getSessionFactory("hibernate-one2one-annotation.cfg.xml").openSession();
+		System.out.println("Hibernate one to one (XML mapping)");
+		Session session = HibernateUtil.getSessionFactory("hibernate-one2one.cfg.xml").openSession();
 
 		session.beginTransaction();
 
 		Stock stock = new Stock();
 
-		stock.setStockCode("7052");
-		stock.setStockName("PADINI");
+		stock.setStockCode("4719");
+		stock.setStockName("GENO");
 
 		StockDetail stockDetail = new StockDetail();
-		stockDetail.setCompName("PADINI Holding Malaysia");
-		stockDetail.setCompDesc("one stop shopping");
-		stockDetail.setRemark("vinci vinci");
+		stockDetail.setCompName("GENTING Malaysia");
+		stockDetail.setCompDesc("Best resort in the world");
+		stockDetail.setRemark("Nothing Special");
 		stockDetail.setListedDate(new Date());
 
 		stock.setStockDetail(stockDetail);
@@ -31,7 +31,7 @@ public class One2OneAnnotationDemo {
 		session.getTransaction().commit();
 
 		System.out.println("Done");
-
+		
 		System.exit(0);
 	}
 }
