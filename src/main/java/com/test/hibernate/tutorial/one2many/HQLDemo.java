@@ -1,6 +1,7 @@
 package com.test.hibernate.tutorial.one2many;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -39,6 +40,13 @@ public class HQLDemo {
 		 // .filter(s -> s.getStockId() == 1)
 		  .map(Stock::getStockId)
 		  .forEach(System.out::println);
+		
+		
+		List<com.test.hibernate.tutorial.one2many.Stock> filteredList =stockList.stream()
+		  .filter(s -> s.getStockName().startsWith("GEN"))
+		  .collect(Collectors.toList());
+		filteredList.stream().forEach(s -> {System.out.print(s.getStockId() + " "); System.out.println(s.getStockName());});
+		
 		
 		session.createQuery("from com.test.hibernate.tutorial.one2many.Stock", com.test.hibernate.tutorial.one2many.Stock.class).stream().filter(s -> s.getStockId() == 1)
 		  .map(Stock::getStockId)
