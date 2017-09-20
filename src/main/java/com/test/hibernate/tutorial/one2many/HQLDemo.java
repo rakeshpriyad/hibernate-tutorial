@@ -9,7 +9,7 @@ import org.hibernate.query.Query;
 import com.test.hibernate.tutorial.util.HibernateUtil;
 
 public class HQLDemo {
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public static void main(String[] args) {
 		System.out.println("Hibernate HQL example");
 		Session session = HibernateUtil.getSessionFactory("hibernate-one2many.cfg.xml").openSession();
