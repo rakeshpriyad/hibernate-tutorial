@@ -4,6 +4,10 @@ import java.util.Set;
 
 public class Stock implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer stockId;
 	private String stockCode;
 	private String stockName;
