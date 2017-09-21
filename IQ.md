@@ -35,6 +35,16 @@ This is another popular Hibernate interview question, mostly at a telephonic rou
 
 What is difference between getCurrentSession() and openSession() in Hibernate?
 
+What are the three states of a Hibernate Persistence object can be? (detailed answer)
+The Hibernate persistent or entity object can live in following three states:
+1) transient
+2) persistent
+3) detached
+
+
+What is the difference between the transient, persistent and detached state in Hibernate? (detailed answer)
+New objects created in Java program but not associated with any hibernate Session are said to be in the transient state. On the other hand, an object which is associated with a Hibernate session is called Persistent object. While an object which was earlier associated with Hibernate session but currently it's not associate is known as a detached object. You can call save() or persist() method to store those object into the database and bring them into the Persistent state. Similarly, you can re-attach a detached object to hibernate sessions by calling either update() or saveOrUpdate() method.
+
 
 
 What is Hibernate Framework?
